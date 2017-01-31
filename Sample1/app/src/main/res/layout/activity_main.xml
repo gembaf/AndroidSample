@@ -33,24 +33,64 @@
         android:id="@+id/rhs"
         android:background="@drawable/sample" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="45dp"
+        android:orientation="horizontal"
+        android:id="@+id/operationsRadioGroup"
+        android:layout_below="@+id/rhs"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:checkedButton="@+id/add">
+
+        <RadioButton
+            android:text="+"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add"
+            android:selectAllOnFocus="true" />
+
+        <RadioButton
+            android:text="-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sub" />
+
+        <RadioButton
+            android:text="×"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mlt" />
+
+        <RadioButton
+            android:text="÷"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/div" />
+
+    </RadioGroup>
+
     <Button
         android:text="計算"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/myButton"
-        android:layout_below="@+id/rhs"
+        android:onClick="calculate"
+        android:layout_below="@+id/operationsRadioGroup"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:onClick="calculate" />
+        android:layout_marginTop="22dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:id="@+id/resultTextView"
-        android:layout_marginTop="59dp"
         android:textAlignment="center"
+        android:background="@drawable/sample"
         android:layout_below="@+id/myButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
+
 </RelativeLayout>
