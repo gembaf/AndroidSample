@@ -13,25 +13,25 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:id="@+id/lhs"
-        android:background="@drawable/sample" />
+        android:background="@drawable/sample"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
         android:layout_below="@+id/lhs"
         android:layout_alignRight="@+id/lhs"
         android:layout_alignEnd="@+id/lhs"
         android:layout_marginTop="46dp"
         android:id="@+id/rhs"
-        android:background="@drawable/sample" />
+        android:background="@drawable/sample"
+        android:inputType="number" />
 
     <RadioGroup
         android:layout_width="wrap_content"
