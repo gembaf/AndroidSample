@@ -1,13 +1,17 @@
 package com.example.gembaf.sample2;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
+
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
 
 /**
  * Instrumentation test, which will execute on an Android device.
@@ -16,11 +20,19 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() throws Exception {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
+    @Rule
+    public ActivityTestRule<MainActivity> mainActivityRule = new ActivityTestRule<>(MainActivity.class);
 
-        assertEquals("com.example.gembaf.sample2", appContext.getPackageName());
+    @Test
+    public void nextPageTest() throws Exception {
+        onView(withId(R.id.nextButton)).perform(click());
+        onView(withId(R.id.subLabel)).check(matches(withText("SubPage")));
+    }
+
+    @Test
+    public void returnPageTest() throws Exception {
+        onView(withId(R.id.nextButton)).perform(click());
+        onView(withId(R.id.returnButton)).perform(click());
+        onView(withId(R.id.mainLabel)).check(matches(withText("MainPage")));
     }
 }
