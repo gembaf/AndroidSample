@@ -13,5 +13,31 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAlignment="center"
+        android:minWidth="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:id="@+id/userList" />
+
+    <Button
+        android:text="Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="172dp"
+        android:id="@+id/addButton"
+        android:onClick="addUser"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/addButton"
+        android:layout_alignEnd="@+id/addButton"
+        android:layout_marginBottom="69dp"
+        android:id="@+id/deleteButton"
+        android:onClick="deleteUser" />
 </RelativeLayout>
